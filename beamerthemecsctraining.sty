@@ -2,24 +2,20 @@
 
 \RequirePackage{fontspec}
 
-\setmainfont{Corbel}
-\setsansfont{Corbel}
+\setmainfont{Arial}
+\setsansfont{Arial}
 %\setmonofont{Liberation Mono}
 
-% https://intra.csc.fi/intoguidelines/marcom/Documents/CSC%20Brand/Br%C3%A4ndiv%C3%A4rit.jpg
-\definecolor{CSC1}{HTML}{830051}
-\definecolor{CSC2}{HTML}{006778}
-\definecolor{CSC3}{HTML}{5e6a71}
-\definecolor{CSCblue}{HTML}{0082bb}
-\definecolor{CSCgreen}{HTML}{7dc242}
-\definecolor{CSCtitleBG}{HTML}{0070a7}
-\definecolor{CSCsectionBG}{HTML}{0082bb}
+\definecolor{CSCorange}{HTML}{ffeee5}
+\definecolor{CSCred}{HTML}{f8eae9}
+\definecolor{CSCblue}{HTML}{c8e0f5}
+\definecolor{CSCgreen}{HTML}{dbeee0}
 
-\setbeamerfont{title}{size=\huge}
-\setbeamercolor{title}{fg=white}
+\setbeamerfont{title}{size=\large}
+\setbeamercolor{title}{fg=black}
 
-\setbeamerfont{subtitle}{size=\small}
-\setbeamercolor{subtitle}{fg=white}
+\setbeamerfont{subtitle}{size=\small,series=}
+\setbeamercolor{subtitle}{fg=black}
 
 \setbeamerfont{section}{size=\huge}
 \setbeamercolor{section}{fg=white}
@@ -34,34 +30,41 @@
 
 \beamertemplatenavigationsymbolsempty
 
-\pgfdeclareimage[width=2cm,interpolate=true]{traininglogo}{images/csc-training-logo.png}
-\pgfdeclareimage[width=\paperwidth, height=\paperheight]{titlepagebg}{images/csc-training-bg.png}
 \pgfdeclareimage[width=1.5cm]{csclogo}{images/CSC_2012_LOGO_RGB.pdf}
+\pgfdeclareimage[width=3.0cm]{CSCLogoLarge}{images/CSC_2012_LOGO_RGB.pdf}
 
 \setbeamertemplate{title page}{
   \begin{picture}(0,0)
 
-    \put(-28,-176){%
-      \pgfuseimage{titlepagebg}
+    \put(-15,35){%
+      \pgfuseimage{CSCLogoLarge}
     }
 
-    \put(-12,62){%
-      \pgfuseimage{traininglogo}
-    }
-    
-    \put(-10,-53){%
-      % \fbox{%
-      \begin{minipage}[b][20mm][b]{85mm}
-        \usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle\par}
+    \put(7, -70){%
+      \colorbox{white}{%
+        \begin{minipage}[b][30mm][c]{110mm}
+          \begin{bfseries}
+            \usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle\par}
+          \end{bfseries}
+          \vspace{3mm}
+          \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}{\insertsubtitle\par}
       \end{minipage}
-      % }
+      }
     }
+   
+    %% \put(-10,-53){%
+    %%   % \fbox{%
+    %%   \begin{minipage}[b][20mm][b]{85mm}
+    %%     \usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle\par}
+    %%   \end{minipage}
+    %%   % }
+    %% }
 
-    \put(-10,-133){%
-      \begin{minipage}[b][20mm][t]{90mm}
-        \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}{\insertsubtitle\par}
-      \end{minipage}
-    }
+    %% \put(-10,-133){%
+    %%   \begin{minipage}[b][20mm][t]{90mm}
+    %%     \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}{\insertsubtitle\par}
+    %%   \end{minipage}
+    %% }
 
   \end{picture}
 }
@@ -111,13 +114,13 @@
 }
 
 \AtBeginDocument{%
-  \setbeamercolor{background canvas}{bg=CSCtitleBG}
+  \setbeamercolor{background canvas}{bg=CSCorange}
   \frame[plain]{\titlepage}
   \setbeamercolor{background canvas}{bg=}
 }
 
 \AtBeginSection{
-  \setbeamercolor{background canvas}{bg=CSCsectionBG}
+  \setbeamercolor{background canvas}{bg=CSCorange}
   \frame[plain]{\sectionpage}
   \setbeamercolor{background canvas}{bg=}
 }
