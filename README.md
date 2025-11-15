@@ -29,7 +29,6 @@ Use these lines at the top of your LaTeX Beamer document:
 
 ```latex
 \documentclass[aspectratio=169,10pt]{beamer}
-\usepackage[utf8]{inputenc}
 \usetheme{csc2025}
 ```
 
