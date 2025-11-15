@@ -49,4 +49,5 @@ lualatex example.tex
 
 ## Example
 
-Check the [example.tex](example.tex) for a full example.
+Check [example.tex](example.tex) for a full LaTeX example, and
+see [example.pdf](example.pdf) for the resulting PDF file.
