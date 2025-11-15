@@ -1,8 +1,10 @@
+% Background color options from CSC template
 \definecolor{CSCorange}{HTML}{ffeee5}
 \definecolor{CSCred}{HTML}{f8eae9}
 \definecolor{CSCblue}{HTML}{c8e0f5}
 \definecolor{CSCgreen}{HTML}{dbeee0}
 
+% Used for the small bar on the title page
 \definecolor{CSCdarkblue}{HTML}{02284f}
 
 \colorlet{CSCbgcolor}{CSCorange}
@@ -27,29 +29,26 @@
 \setbeamerfont{subtitle}{size=\large,series=}
 \setbeamercolor{subtitle}{fg=black}
 
-%% \setbeamerfont{section}{size=\LARGE}
-%% \setbeamercolor{section}{fg=black}
+\setbeamerfont{section}{size=\LARGE}
+\setbeamercolor{section}{fg=black}
 
 \setbeamercolor{frametitle}{fg=black}
 \setbeamerfont{frametitle}{size=\Large}
 
-%\setbeamercolor{alerted text}{fg=CSCblue}
+\setbeamercolor{alerted text}{fg=CSCdarkblue}
 
 \beamertemplatenavigationsymbolsempty
 
 \pgfdeclareimage[width=1.5cm]{csclogo}{images/CSC_2012_LOGO_RGB.pdf}
 \pgfdeclareimage[width=3.0cm]{CSCLogoLarge}{images/CSC_2012_LOGO_RGB.pdf}
 
-\RequirePackage{tcolorbox}
-
 \setbeamertemplate{title page}{
   \begin{picture}(0,0)
-    %% \put(-15,40){%
+    %% \put(-15,40){%  with headline
     \put(-15,25){%
       \pgfuseimage{CSCLogoLarge}
     }
     \put(7, -80){%
-      %% \begin{tcolorbox}[boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1pt}{0pt}{white}]
       {\color{CSCdarkblue}\vrule width 1.5pt}%
       \colorbox{white}{%
         \hspace{1em}
