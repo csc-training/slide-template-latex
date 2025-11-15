@@ -1,0 +1,126 @@
+\definecolor{CSCorange}{HTML}{ffeee5}
+\definecolor{CSCred}{HTML}{f8eae9}
+\definecolor{CSCblue}{HTML}{c8e0f5}
+\definecolor{CSCgreen}{HTML}{dbeee0}
+
+\definecolor{CSCdarkblue}{HTML}{02284f}
+
+\colorlet{CSCbgcolor}{CSCorange}
+
+\DeclareOptionBeamer{orange}{\colorlet{CSCbgcolor}{CSCorange}{#1}}
+\DeclareOptionBeamer{red}{\colorlet{CSCbgcolor}{CSCred}{#1}}
+\DeclareOptionBeamer{blue}{\colorlet{CSCbgcolor}{CSCblue}{#1}}
+\DeclareOptionBeamer{green}{\colorlet{CSCbgcolor}{CSCgreen}{#1}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\RequirePackage{fontspec}
+
+\setmainfont{Arial}
+\setsansfont{Arial}
+%\setmonofont{Liberation Mono}
+
+\setbeamerfont{title}{size=\LARGE}
+\setbeamercolor{title}{fg=black}
+
+\setbeamerfont{subtitle}{size=\large,series=}
+\setbeamercolor{subtitle}{fg=black}
+
+%% \setbeamerfont{section}{size=\LARGE}
+%% \setbeamercolor{section}{fg=black}
+
+\setbeamercolor{frametitle}{fg=black}
+\setbeamerfont{frametitle}{size=\Large}
+
+%\setbeamercolor{alerted text}{fg=CSCblue}
+
+\beamertemplatenavigationsymbolsempty
+
+\pgfdeclareimage[width=1.5cm]{csclogo}{images/CSC_2012_LOGO_RGB.pdf}
+\pgfdeclareimage[width=3.0cm]{CSCLogoLarge}{images/CSC_2012_LOGO_RGB.pdf}
+
+\RequirePackage{tcolorbox}
+
+\setbeamertemplate{title page}{
+  \begin{picture}(0,0)
+    %% \put(-15,40){%
+    \put(-15,25){%
+      \pgfuseimage{CSCLogoLarge}
+    }
+    \put(7, -80){%
+      %% \begin{tcolorbox}[boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1pt}{0pt}{white}]
+      {\color{CSCdarkblue}\vrule width 1.5pt}%
+      \colorbox{white}{%
+        \hspace{1em}
+        \begin{minipage}[b][30mm][c]{110mm}
+          \begin{bfseries}
+            \usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle\par}
+          \end{bfseries}
+          \vspace{3mm}
+          \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}{\insertsubtitle\par}
+      \end{minipage}
+      }
+    }
+  \end{picture}
+}
+
+\setbeamertemplate{section page}{
+  \begin{picture}(0,0)
+    \put(10,-174){%
+      \begin{minipage}[b][45mm][t]{226mm}
+        \usebeamerfont{section}\usebeamercolor[fg]{section}{\insertsection\par}
+      \end{minipage}
+    }
+  \end{picture}
+}
+
+\setbeamertemplate{headline}{
+  \vspace{1.5em}%
+  \hfill%
+  \pgfuseimage{csclogo}%
+  \hspace{0.5em}
+}
+
+\setbeamertemplate{frametitle}{\bf \insertframetitle}
+
+\addtocounter{framenumber}{-1}
+\setbeamertemplate{footline}{
+  \usebeamerfont{footline}%
+  \usebeamercolor[fg]{footline}%
+  %%
+  \hspace{4em}%
+  \insertframenumber%/\inserttotalframenumber%
+  \hspace{2.5em}%
+  \insertdate%
+  \vspace{1.5em}%
+}
+
+\setbeamercolor{itemize item}{fg=black}
+\setbeamercolor{itemize subitem}{fg=black}
+\setbeamercolor{itemize subsubitem}{fg=black}
+
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{-}
+% \setbeamertemplate{itemize subsubitem}[triangle]
+\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+% Control spacing between \item's
+\let\olditem\item
+\renewcommand{\item}{%
+\olditem\vspace{3pt}}
+
+\AtBeginDocument{%
+  \setbeamercolor{background canvas}{bg=CSCbgcolor}
+  \frame[plain]{\titlepage}
+  \setbeamercolor{background canvas}{bg=}
+}
+
+\AtBeginSection{
+  \setbeamercolor{background canvas}{bg=CSCbgcolor}
+  \frame[plain]{\sectionpage}
+  \setbeamercolor{background canvas}{bg=}
+}
+
+\mode<all>
