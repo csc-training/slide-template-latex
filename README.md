@@ -34,10 +34,10 @@ Use these lines at the top of your LaTeX Beamer document:
 \usetheme{csc2025}
 ```
 
-You can optionally set the desired background color for the theme:
+You can optionally set the desired background color and title page image for the theme:
 
 ```latex
-\usetheme[blue]{csc2025}
+\usetheme[blue,image=images/puhti.jpeg]{csc2025}
 ```
 
 Background color options are: `orange`, `red`, `blue` and `green`.
