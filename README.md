@@ -9,6 +9,7 @@ Currently supports:
 
 TODOs:
 
+- [ ] implement picture on title page
 - [ ] implement section page
 - [ ] set correct link color
 - [ ] implement thank you page
