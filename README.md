@@ -9,11 +9,6 @@ Currently supports:
 
 TODOs:
 
-- [x] implement picture on title page
-- [ ] check correct postion of picture
-- [ ] set correct link color
-- [ ] check third level itemize symbol
-- [ ] implement section page
 - [ ] implement thank you page
 
 Pull requests welcome for supporting further slide types.

@@ -4,6 +4,9 @@
 \definecolor{CSCblue}{HTML}{c8e0f5}
 \definecolor{CSCgreen}{HTML}{dbeee0}
 
+\definecolor{CSCtextcolor}{HTML}{002930}
+\definecolor{CSClinkcolor}{HTML}{006778}
+
 % Used for the small bar on the title page
 \definecolor{CSCdarkblue}{HTML}{02284f}
 
@@ -25,18 +28,20 @@
 %\setmonofont{Liberation Mono}
 
 \setbeamerfont{title}{size=\LARGE}
-\setbeamercolor{title}{fg=black}
+\setbeamercolor{title}{fg=CSCtextcolor}
 
 \setbeamerfont{subtitle}{size=\large,series=}
-\setbeamercolor{subtitle}{fg=black}
+\setbeamercolor{subtitle}{fg=CSCtextcolor}
 
 \setbeamerfont{section}{size=\LARGE}
-\setbeamercolor{section}{fg=black}
+\setbeamercolor{section}{fg=CSCtextcolor}
 
-\setbeamercolor{frametitle}{fg=black}
 \setbeamerfont{frametitle}{size=\Large}
+\setbeamercolor{frametitle}{fg=CSCtextcolor}
 
 \setbeamercolor{alerted text}{fg=CSCdarkblue}
+
+\hypersetup{colorlinks,linkcolor=CSClinkcolor,urlcolor=CSClinkcolor}
 
 \beamertemplatenavigationsymbolsempty
 
@@ -51,7 +56,7 @@
   \setlength{\unitlength}{\paperheight}
   \begin{picture}(1,1)
     \ifdefined\beamer@CSCtitlepagebg
-    \put(0.7,0){% background picture
+    \put(0.47,0){% background picture
       \pgfuseimage{titlepagebg}
     }
     \fi
@@ -60,11 +65,11 @@
       \pgfuseimage{CSCLogoLarge}
     }
 
-    \put(0.04, 0.3){% white box with title
+    \put(0.04, 0.32){% white box with title
       {\color{CSCdarkblue}\vrule width 1.5pt}%
       \colorbox{white}{%
         \hspace{1em}
-        \begin{minipage}[b][30mm][c]{110mm}
+        \begin{minipage}[b][29mm][c]{105mm}
           \begin{bfseries}
             \usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle\par}
           \end{bfseries}
@@ -77,10 +82,13 @@
 }
 
 \setbeamertemplate{section page}{
-  \begin{picture}(0,0)
-    \put(10,-174){%
-      \begin{minipage}[b][45mm][t]{226mm}
-        \usebeamerfont{section}\usebeamercolor[fg]{section}{\insertsection\par}
+  \setlength{\unitlength}{\paperheight}
+  \begin{picture}(1,1)
+    \put(0.0,0.25){%
+      \begin{minipage}[b][30mm][t]{150mm}
+        \begin{bfseries}
+          \usebeamerfont{section}\usebeamercolor[fg]{section}{\secname\par}
+        \end{bfseries}
       \end{minipage}
     }
   \end{picture}
@@ -113,7 +121,7 @@
 
 \setbeamertemplate{itemize item}{\textbullet}
 \setbeamertemplate{itemize subitem}{-}
-% \setbeamertemplate{itemize subsubitem}[triangle]
+\setbeamertemplate{itemize subsubitem}{\textbullet}
 \setbeamertemplate{itemize/enumerate body begin}{\normalsize}
 \setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
 
