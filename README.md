@@ -9,11 +9,12 @@ Currently supports:
 
 TODOs:
 
-- [ ] implement picture on title page
-- [ ] implement section page
+- [x] implement picture on title page
+- [ ] check correct postion of picture
 - [ ] set correct link color
-- [ ] implement thank you page
 - [ ] check third level itemize symbol
+- [ ] implement section page
+- [ ] implement thank you page
 
 Pull requests welcome for supporting further slide types.
 
@@ -33,10 +34,10 @@ Use these lines at the top of your LaTeX Beamer document:
 \usetheme{csc2025}
 ```
 
-You can optionally set the desired background color for the theme:
+You can optionally set the desired background color and title page image for the theme:
 
 ```latex
-\usetheme[blue]{csc2025}
+\usetheme[blue,image=images/puhti.jpeg]{csc2025}
 ```
 
 Background color options are: `orange`, `red`, `blue` and `green`.

@@ -13,6 +13,7 @@
 \DeclareOptionBeamer{red}{\colorlet{CSCbgcolor}{CSCred}{#1}}
 \DeclareOptionBeamer{blue}{\colorlet{CSCbgcolor}{CSCblue}{#1}}
 \DeclareOptionBeamer{green}{\colorlet{CSCbgcolor}{CSCgreen}{#1}}
+\DeclareOptionBeamer{image}{\def\beamer@CSCtitlepagebg{#1}}
 \ProcessOptionsBeamer
 
 \mode<presentation>
@@ -42,13 +43,24 @@
 \pgfdeclareimage[width=1.5cm]{csclogo}{images/CSC_2012_LOGO_RGB.pdf}
 \pgfdeclareimage[width=3.0cm]{CSCLogoLarge}{images/CSC_2012_LOGO_RGB.pdf}
 
+\ifdefined\beamer@CSCtitlepagebg
+\pgfdeclareimage[width=\paperwidth, height=\paperheight]{titlepagebg}{\beamer@CSCtitlepagebg}
+\fi
+
 \setbeamertemplate{title page}{
-  \begin{picture}(0,0)
-    %% \put(-15,40){%  with headline
-    \put(-15,25){%
+  \setlength{\unitlength}{\paperheight}
+  \begin{picture}(1,1)
+    \ifdefined\beamer@CSCtitlepagebg
+    \put(0.7,0){% background picture
+      \pgfuseimage{titlepagebg}
+    }
+    \fi
+
+    \put(-0.05,0.7){% large logo in top left
       \pgfuseimage{CSCLogoLarge}
     }
-    \put(7, -80){%
+
+    \put(0.04, 0.3){% white box with title
       {\color{CSCdarkblue}\vrule width 1.5pt}%
       \colorbox{white}{%
         \hspace{1em}
