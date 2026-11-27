@@ -54,13 +54,15 @@ Using `pandoc` and the [`template.tex`](template.tex) file you can generate the 
 file from a Markdown file:
 
 ```bash
-pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex -o example-markdown.tex example-markdown.md
+pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex \
+    -o example-markdown.tex example-markdown.md
 ```
 
 or directly to PDF:
 
 ```bash
-pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex -o example-markdown.pdf example-markdown.md
+pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex \
+    -o example-markdown.pdf example-markdown.md
 ```
 
 See [example-markdown.md](example-markdown.md) for the example Markdown file. You can also use the adapt the included [`Makefile`](Makefile).
