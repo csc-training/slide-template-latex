@@ -50,7 +50,7 @@ see [example.pdf](example.pdf) for the resulting PDF file.
 
 ## Markdown support
 
-Using `pandoc` and the `template.tex` file you can generate the LaTeX
+Using `pandoc` and the [`template.tex`](template.tex) file you can generate the LaTeX
 file from a Markdown file:
 
 ```bash
@@ -63,4 +63,4 @@ or directly to PDF:
 pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex -o example-markdown.pdf example-markdown.md
 ```
 
-You can also use the adapt the included [`Makefile`](Markdown).
+See [example-markdown.md](example-markdown.md) for the example Markdown file. You can also use the adapt the included [`Makefile`](Makefile).
