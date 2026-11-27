@@ -18,7 +18,7 @@ Pull requests welcome for supporting further slide types.
 
 Needs `lualatex` or `xelatex` in order to support TTF fonts.  For
 example on Ubuntu 22.04 the package `texlive-latex-recommended` should
-bring along everything needded.
+bring along everything needed.
 
 ## Usage
 
@@ -47,3 +47,20 @@ lualatex example.tex
 
 Check [example.tex](example.tex) for a full LaTeX example, and
 see [example.pdf](example.pdf) for the resulting PDF file.
+
+## Markdown support
+
+Using `pandoc` and the `template.tex` file you can generate the LaTeX
+file from a Markdown file:
+
+```bash
+pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex -o example-markdown.tex example-markdown.md
+```
+
+or directly to PDF:
+
+```bash
+pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex -o example-markdown.pdf example-markdown.md
+```
+
+You can also use the adapt the included [`Makefile`](Markdown).
