@@ -1,12 +1,8 @@
 ---
-theme:
-- csc2025
 themeoptions:
 - blue,image=images/puhti.jpeg
 classoption:
 - aspectratio=169,12pt
-section-title:
-- true
 title:
 - Example slides
 subtitle:

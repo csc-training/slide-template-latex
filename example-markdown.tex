@@ -1,0 +1,32 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usetheme[blue,image=images/puhti.jpeg]{csc2025}
+
+\title{Example slides}
+\subtitle{Subtitle here}
+\date{26.11.2026}
+
+% because pandoc adds \tightlist to lists
+\def\tightlist{}
+
+\begin{document}
+\section{Section title}\label{section-title}
+
+\begin{frame}{This is a title}
+\protect\phantomsection\label{this-is-a-title}
+\begin{itemize}
+\tightlist
+\item
+  Some interesting text
+\item
+  More text here
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Yes, indeed
+  \item
+    This is a link: \href{https://www.csc.fi}{CSC's web page}
+  \end{itemize}
+\end{itemize}
+\end{frame}    
+\end{document}
