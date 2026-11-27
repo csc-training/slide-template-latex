@@ -62,7 +62,7 @@ or directly to PDF:
 
 ```bash
 pandoc -t beamer --template template.tex --slide-level=2 --pdf-engine=lualatex \
-    -o example-markdown.pdf example-markdown.md
+    -o example.pdf example-markdown.md
 ```
 
 See [example-markdown.md](example-markdown.md) for the example Markdown file. You can also use the adapt the included [`Makefile`](Makefile).
